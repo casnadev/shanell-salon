@@ -1,0 +1,64 @@
+/* =========================================================
+   Página del link de reserva  (/reserva/:token)
+   ========================================================= */
+.res-page { min-height: 100vh; padding: 28px 16px 60px; display: flex; flex-direction: column; align-items: center; }
+.res-brand { font-family: var(--serif); font-size: 30px; margin: 10px 0 28px; }
+.res-brand em { color: var(--gold); }
+
+/* barra solo para la presentación */
+.demo-bar {
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center;
+  padding: 6px; border-radius: 999px; background: var(--surface); border: 1px dashed var(--gold-soft);
+  font-size: 12.5px; margin-bottom: 8px;
+}
+.demo-bar span { padding: 0 8px; color: var(--muted); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; font-size: 11px; }
+.demo-bar a { padding: 6px 12px; border-radius: 999px; font-weight: 600; }
+.demo-bar a:hover { background: var(--surface-2); }
+
+.vista { display: none; width: min(520px, 100%); }
+.vista:target, .vista-default { display: block; }
+.vista:target ~ .vista-default { display: none; }
+
+.ticket { background: var(--surface); border-radius: 26px; box-shadow: var(--shadow); overflow: hidden; }
+.ticket-top { padding: 30px 30px 26px; background: var(--deep); color: #f3ece3; position: relative; }
+.ticket-top small { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #b2a597; }
+.ticket-top h1 { font-family: var(--serif); font-weight: 500; font-size: 38px; line-height: 1.05; margin: 8px 0 16px; }
+.ticket-top .code { position: absolute; top: 30px; right: 30px; font-family: var(--serif); font-size: 22px; color: var(--gold-soft); }
+.ticket-cut { height: 22px; background: radial-gradient(circle at 0 50%, var(--bg) 11px, transparent 12px) left / 22px 22px no-repeat, radial-gradient(circle at 100% 50%, var(--bg) 11px, transparent 12px) right / 22px 22px no-repeat, var(--surface); position: relative; }
+.ticket-cut::after { content: ""; position: absolute; left: 22px; right: 22px; top: 50%; border-top: 2px dashed var(--line); }
+.ticket-body { padding: 8px 30px 30px; }
+.kv { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 18px; }
+.kv div small { display: block; font-size: 12px; color: var(--muted); font-weight: 600; letter-spacing: .04em; }
+.kv div b { font-size: 16px; font-weight: 600; }
+.kv .full { grid-column: 1 / -1; }
+
+.gcal {
+  margin-top: 26px; display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%;
+  padding: 15px 20px; border-radius: 14px; border: 1px solid var(--line); background: #fff;
+  font-weight: 600; font-size: 15px; transition: box-shadow .2s, transform .2s;
+}
+.gcal:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+.gcal svg { width: 24px; height: 24px; }
+.gcal.disabled { filter: grayscale(1); opacity: .55; pointer-events: none; cursor: not-allowed; }
+.gcal-hint { text-align: center; font-size: 13px; color: var(--muted); margin: 10px 0 0; }
+
+.notice { margin-top: 24px; padding: 16px 18px; border-radius: 14px; font-size: 14px; }
+.notice.bad { background: var(--st-rechazada-bg); color: #7d3a32; }
+.notice.neutral { background: var(--st-cancelada-bg); color: #5a534c; }
+
+.res-actions { display: flex; gap: 10px; margin-top: 16px; }
+.res-actions .btn { flex: 1; }
+
+.expired { text-align: center; padding: 56px 32px; }
+.expired .icon { width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 18px; display: grid; place-items: center; background: var(--surface-2); font-size: 28px; }
+.expired h1 { font-family: var(--serif); font-weight: 500; font-size: 32px; margin: 0 0 8px; }
+.expired p { color: var(--muted); margin: 0 0 24px; }
+
+.res-foot { margin-top: 26px; font-size: 13px; color: var(--muted); text-align: center; }
+
+/* =========== Tema blanco + dorado =========== */
+.res-brand em { color: var(--gold); }
+.ticket-top { background: var(--gold-grad); color: #fff; }
+.ticket-top small { color: rgba(255,255,255,.8); }
+.ticket-top .code { color: #fff; opacity: .9; }
+.demo-bar { border-color: var(--gold-soft); }
